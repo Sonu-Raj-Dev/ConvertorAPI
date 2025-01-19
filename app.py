@@ -1,6 +1,6 @@
-from flask import Flask, request, send_file
+from flask import Flask, request
 from flask_cors import CORS  # Import CORS
-from app.converter import convert_pdf_to_word  # Import the existing method
+from app.converter import convert_pdf_to_word  # Import the existing method from converter.py
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS
