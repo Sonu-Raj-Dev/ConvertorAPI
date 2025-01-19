@@ -5,6 +5,7 @@ from app.converter import convert_pdf_to_word  # Import the existing method from
 app = Flask(__name__)
 CORS(app)  # Enable CORS
 
+
 # Root route for homepage
 @app.route('/')
 def home():
