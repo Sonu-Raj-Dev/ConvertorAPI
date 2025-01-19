@@ -13,6 +13,7 @@ def convert_pdf_to_word(request):
     if not file.filename.lower().endswith('.pdf'):
         return "Invalid file format. Please upload a PDF.", 400
 
+
     # Generate safe file paths
     file_name = file.filename.replace(" ", "_")  # Replace spaces with underscores
     pdf_path = os.path.join(os.getcwd(), file_name)  # Save in the current working directory
