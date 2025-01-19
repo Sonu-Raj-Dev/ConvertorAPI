@@ -1,7 +1,9 @@
 from flask import Flask
+from flask_cors import CORS  # Import CORS
+
 
 app = Flask(__name__)
-
+CORS(app)
 # Root route for homepage
 @app.route('/')
 def home():
