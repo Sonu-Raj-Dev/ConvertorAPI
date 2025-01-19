@@ -1,14 +1,20 @@
-from app import app
-from flask import request, send_file
-from app.converter import convert_pdf_to_word
+from flask import Flask
 
-@app.route('/convert', methods=['POST'])
-def convert_pdf_to_word_route():
-    return convert_pdf_to_word(request)
+app = Flask(__name__)
+
+@app.route('/')
+@app.route('/')
+def home():
+    return """
+    <html>
+        <body style="font-family: Arial, sans-serif; text-align: center; margin-top: 50px;">
+            <h1>API is running successfully!</h1>
+            <p>Access the conversion endpoint at <a href="/convert">/convert</a>.</p>
+        </body>
+    </html>
+    """
+
+# Your existing '/convert' route goes here...
 
 if __name__ == '__main__':
-    print("Starting the PDF to Word conversion API...")
-    try:
-        app.run(debug=True)
-    except Exception as e:
-        print(f"Error starting the server: {e}")
+    app.run(debug=True)

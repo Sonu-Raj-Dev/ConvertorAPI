@@ -1,5 +1,5 @@
 import os
-from flask import send_file, request
+from flask import send_file
 from pdf2docx import Converter
 
 def convert_pdf_to_word(request):
