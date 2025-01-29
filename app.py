@@ -6,6 +6,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS
 
 
+
 # Root route for homepage
 @app.route('/')
 def home():
