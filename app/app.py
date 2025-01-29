@@ -1,11 +1,10 @@
-# app/app.py
-
-from flask import Flask, request, send_file
+from flask import Flask, request
 from flask_cors import CORS  # Import CORS
-import os
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS
+
+
 
 # Root route for homepage
 @app.route('/')
@@ -23,8 +22,8 @@ def home():
 # Convert route to handle POST requests
 @app.route('/convert', methods=['POST'])
 def convert_pdf_to_word_route():
-    from app.converter import convert_pdf_to_word  # Import here to avoid circular import
-    return convert_pdf_to_word(request)
+    return convert_pdf_to_word(request)  # Call the method from the converter module
 
 if __name__ == '__main__':
     app.run(debug=True)
+
